@@ -6,12 +6,12 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 
 app.use(express.json());
-app.use('/issues', issues);
 app.use(
   cors({
     origin: ['http://localhost:3000'],
   })
 );
+app.use('/issues', issues);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
